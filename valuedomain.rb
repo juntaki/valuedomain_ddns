@@ -23,7 +23,7 @@ driver.find_element(:name, "password").clear
 driver.find_element(:name, "password").send_keys setting['password']
 driver.find_element(:name, "Submit").click
 
-driver.get(base_url + "/moddns.php?action=moddns2&domainname=juntaki.com")
+driver.get(base_url + "/moddns.php?action=moddns2&domainname=#{setting['domain']}")
 1.upto(9) do |i|
   value = driver.find_element(:id, "idHostName#{i}").attribute("value")
   next unless value == setting['subdomain']
